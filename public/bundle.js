@@ -21464,55 +21464,72 @@
 
 	var React = __webpack_require__(1);
 	//var ReactDOM = require('react-dom');
+	var SearchUser = __webpack_require__(179);
 
 	var Github = React.createClass({
-	  displayName: "Github",
+	  displayName: 'Github',
 
-
-	  handleSubmit: function (e) {
-	    e.preventDefault();
-	    console.log(this.refs.username.value);
-	  },
 
 	  render: function () {
 	    return React.createElement(
+	      'div',
+	      { className: 'container' },
+	      React.createElement(SearchUser, null)
+	    );
+	  }
+	});
+
+	module.exports = Github;
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var SearchUser = React.createClass({
+	  displayName: "SearchUser",
+
+
+	  handleSubmit: function (e) {
+	    console.log("sss");
+	    e.preventDefault();
+	  },
+	  render: function () {
+	    return React.createElement(
 	      "div",
-	      { className: "container" },
+	      { className: "jumbotron" },
+	      React.createElement(
+	        "h1",
+	        null,
+	        "GitHub Info"
+	      ),
 	      React.createElement(
 	        "div",
-	        { className: "jumbotron" },
+	        { className: "row" },
 	        React.createElement(
-	          "h1",
-	          null,
-	          "Github Info"
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "row" },
+	          "form",
+	          { onSubmit: this.handleSubmit },
 	          React.createElement(
-	            "form",
-	            { onSubmit: this.handleSubmit },
+	            "div",
+	            { className: "form-group" },
 	            React.createElement(
-	              "div",
-	              { className: "form-group" },
-	              React.createElement(
-	                "label",
-	                null,
-	                "Username"
-	              ),
-	              React.createElement("input", {
-	                type: "text",
-	                ref: "username",
-	                className: "form-control",
-	                placeholder: "Ex. Jo\xE3o " })
+	              "label",
+	              null,
+	              "Username"
 	            ),
-	            React.createElement(
-	              "button",
-	              {
-	                type: "submit",
-	                className: "btn btn-primary" },
-	              "Search"
-	            )
+	            React.createElement("input", {
+	              type: "text",
+	              ref: "username",
+	              className: "form-control",
+	              placeholder: "Ex. Jo\xE3o " })
+	          ),
+	          React.createElement(
+	            "button",
+	            {
+	              type: "submit",
+	              className: "btn btn-primary" },
+	            "Search"
 	          )
 	        )
 	      )
@@ -21521,7 +21538,7 @@
 
 	});
 
-	module.exports = Github;
+	module.exports = SearchUser;
 
 /***/ }
 /******/ ]);
