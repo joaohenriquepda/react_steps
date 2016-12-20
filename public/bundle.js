@@ -47,11 +47,9 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
 
-	ReactDOM.render(React.createElement(
-	  'h1',
-	  null,
-	  'Vamos l\xE1'
-	), document.getElementById('app'));
+	var Github = __webpack_require__(178);
+
+	ReactDOM.render(React.createElement(Github, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -21459,6 +21457,71 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	//var ReactDOM = require('react-dom');
+
+	var Github = React.createClass({
+	  displayName: "Github",
+
+
+	  handleSubmit: function (e) {
+	    e.preventDefault();
+	    console.log(this.refs.username.value);
+	  },
+
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "container" },
+	      React.createElement(
+	        "div",
+	        { className: "jumbotron" },
+	        React.createElement(
+	          "h1",
+	          null,
+	          "Github Info"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "row" },
+	          React.createElement(
+	            "form",
+	            { onSubmit: this.handleSubmit },
+	            React.createElement(
+	              "div",
+	              { className: "form-group" },
+	              React.createElement(
+	                "label",
+	                null,
+	                "Username"
+	              ),
+	              React.createElement("input", {
+	                type: "text",
+	                ref: "username",
+	                className: "form-control",
+	                placeholder: "Ex. Jo\xE3o " })
+	            ),
+	            React.createElement(
+	              "button",
+	              {
+	                type: "submit",
+	                className: "btn btn-primary" },
+	              "Search"
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = Github;
 
 /***/ }
 /******/ ]);
